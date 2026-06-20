@@ -25,9 +25,15 @@
     header {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       padding: 36px 58px 10px;
       z-index: 2;
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .brand {
@@ -38,12 +44,22 @@
       color: #24557C;
     }
 
+    .subbrand {
+      margin-top: 6px;
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: #6F8DA8;
+    }
+
     .icons {
       display: flex;
       align-items: center;
       gap: 15px;
       font-family: Arial, sans-serif;
       font-size: 13px;
+      padding-top: 4px;
     }
 
     .icons a {
@@ -141,12 +157,16 @@
     @media (max-width: 760px) {
       header {
         padding: 30px 28px 10px;
-        align-items: flex-start;
       }
 
       .brand {
         font-size: 22px;
         letter-spacing: 3px;
+      }
+
+      .subbrand {
+        font-size: 9px;
+        letter-spacing: 2.4px;
       }
 
       .icons {
@@ -178,7 +198,10 @@
 <body>
   <div class="page">
     <header>
-      <div class="brand">Marbeau</div>
+      <div class="brand-block">
+        <div class="brand">Marbeau</div>
+        <div class="subbrand">Advisory</div>
+      </div>
 
       <div class="icons">
         <a href="https://calendly.com/marbeau/intro-call" target="_blank" rel="noopener noreferrer" aria-label="Schedule intro call">☎</a>
@@ -208,7 +231,6 @@
         <circle cx="250" cy="250" r="205" fill="none" stroke="currentColor" stroke-width="1.4" />
 
         <g clip-path="url(#globeClip)" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <!-- North America -->
           <path d="M104 139
                    C129 106, 181 87, 226 102
                    C243 108, 253 119, 251 132
@@ -218,13 +240,11 @@
                    C135 187, 119 186, 107 170
                    C98 158, 96 149, 104 139Z" />
 
-          <!-- Central America -->
           <path d="M185 213
                    C205 213, 221 222, 234 235
                    C219 240, 202 238, 185 230
                    C176 226, 176 216, 185 213Z" />
 
-          <!-- South America -->
           <path d="M233 242
                    C258 259, 271 291, 259 327
                    C251 351, 236 373, 242 405
@@ -232,14 +252,12 @@
                    C204 302, 190 278, 205 258
                    C213 249, 222 244, 233 242Z" />
 
-          <!-- Europe -->
           <path d="M270 128
                    C292 112, 327 114, 345 134
                    C329 145, 311 150, 304 166
                    C289 164, 273 156, 266 143
                    C263 137, 264 132, 270 128Z" />
 
-          <!-- Africa -->
           <path d="M299 169
                    C330 177, 350 209, 343 248
                    C337 286, 312 333, 281 361
@@ -247,20 +265,17 @@
                    C270 236, 261 216, 244 197
                    C256 180, 276 164, 299 169Z" />
 
-          <!-- Asia -->
           <path d="M337 139
                    C378 112, 436 123, 462 160
                    C441 172, 418 185, 417 212
                    C398 208, 374 207, 359 225
                    C342 207, 334 175, 337 139Z" />
 
-          <!-- Southeast Asia / islands -->
           <path d="M384 235
                    C402 232, 422 239, 433 254
                    C419 263, 397 262, 381 250
                    C374 245, 376 238, 384 235Z" />
 
-          <!-- Australia -->
           <path d="M372 322
                    C399 304, 439 313, 457 339
                    C435 360, 393 365, 361 347
