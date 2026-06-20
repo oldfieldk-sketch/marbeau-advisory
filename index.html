@@ -1,41 +1,73 @@
-
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-US">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Marbeau Advisory</title>
+
+  <meta
+    name="description"
+    content="Marbeau advises growth-oriented companies, funds, and mission-driven organizations on expanding their reach across geographies through aligned partnerships, capital, and strategic opportunities."
+  />
 
   <style>
     :root {
-      --background: #FFFFFF;
-      --primary-blue: #24557C;
-      --soft-blue: #6F8DA8;
-      --pale-blue: #A6B8C8;
-      --footer-blue: #14385A;
+      --bg: #FCFDFE;
+      --ink: #1F4E79;
+      --ink-soft: #5E7387;
+      --line: #A8B8C7;
+      --hairline: #E3EAF0;
+      --globe-opacity: 0.10;
+
+      --pad-x: clamp(1.5rem, 5vw, 4.75rem);
+      --pad-y: clamp(1.5rem, 3vw, 3rem);
+
+      --brand-size: clamp(1.65rem, 1.25rem + 1vw, 2.1rem);
+      --subbrand-size: clamp(0.82rem, 0.75rem + 0.2vw, 0.95rem);
+      --hero-size: clamp(1.65rem, 1.05rem + 1.75vw, 2.65rem);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
     }
 
     body {
-      margin: 0;
+      min-height: 100vh;
       font-family: Georgia, "Times New Roman", serif;
-      background: var(--background);
-      color: var(--primary-blue);
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .page {
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
       position: relative;
       overflow: hidden;
-      background: var(--background);
+      background: var(--bg);
+      isolation: isolate;
     }
 
     header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      padding: 44px 8vw 0;
+      gap: 2rem;
+      padding: var(--pad-y) var(--pad-x) 0;
+      position: relative;
       z-index: 3;
     }
 
@@ -46,196 +78,210 @@
     }
 
     .brand {
-      font-size: 29px;
-      letter-spacing: 3.8px;
+      font-size: var(--brand-size);
+      line-height: 1;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       font-weight: normal;
-      color: var(--primary-blue);
-      line-height: 1;
+      color: var(--ink);
     }
 
     .subbrand {
-      margin-top: 8px;
+      margin-top: 0.5rem;
       font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 3.2px;
+      font-size: var(--subbrand-size);
+      line-height: 1.1;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: var(--soft-blue);
-      line-height: 1;
+      color: var(--ink-soft);
     }
 
     .icons {
       display: flex;
       align-items: center;
-      gap: 17px;
+      gap: 0.75rem;
       font-family: Arial, sans-serif;
-      font-size: 14px;
-      padding-top: 3px;
+      padding-top: 0.1rem;
     }
 
     .icons a {
-      color: var(--soft-blue);
-      text-decoration: none;
-      line-height: 1;
-      transition: color 0.2s ease;
+      width: 2.65rem;
+      height: 2.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--hairline);
+      display: grid;
+      place-items: center;
+      color: var(--ink-soft);
+      background: rgba(255, 255, 255, 0.72);
+      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
     .icons a:hover {
-      color: var(--primary-blue);
+      color: var(--ink);
+      border-color: #C7D4DF;
+      transform: translateY(-1px);
     }
 
-    .linkedin {
-      font-family: Arial, sans-serif;
-      font-size: 10px;
-      font-weight: bold;
-      border: 1px solid var(--soft-blue);
-      padding: 1px 3px;
-      line-height: 1;
-      color: var(--soft-blue);
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .icons a:hover .linkedin {
-      color: var(--primary-blue);
-      border-color: var(--primary-blue);
+    .icons svg {
+      width: 1.05rem;
+      height: 1.05rem;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     main {
-      flex: 1;
-      display: flex;
-      align-items: flex-start;
-      padding: 17vh 8vw 11vh;
       position: relative;
+      display: grid;
+      align-items: center;
+      padding: clamp(4rem, 10vh, 7rem) var(--pad-x) clamp(4rem, 10vh, 7rem);
+      z-index: 2;
     }
 
     .content {
-      width: 38%;
-      min-width: 520px;
-      max-width: 640px;
+      max-width: 38ch;
+      position: relative;
       z-index: 2;
     }
 
     h1 {
-      font-size: 18px;
-      line-height: 1.58;
+      margin: 0;
+      font-size: var(--hero-size);
+      line-height: 1.28;
+      letter-spacing: -0.015em;
       font-weight: normal;
-      letter-spacing: 1.15px;
-      text-transform: uppercase;
-      margin: 0 0 30px;
-      color: var(--primary-blue);
+      color: var(--ink);
     }
 
     .accent {
-      width: 58px;
+      width: 4.25rem;
       height: 2px;
-      background: var(--pale-blue);
-      margin: 0;
+      background: var(--line);
+      margin-top: 1.6rem;
+      border-radius: 999px;
     }
 
-    .mark {
+    .world {
       position: absolute;
-      right: 8vw;
-      top: 25%;
-      width: 33vw;
-      max-width: 430px;
-      min-width: 330px;
+      right: -5vw;
+      top: 49%;
+      transform: translateY(-50%);
+      width: min(50vw, 42rem);
+      min-width: 28rem;
       height: auto;
-      color: var(--primary-blue);
-      opacity: 0.18;
+      color: var(--ink);
+      opacity: var(--globe-opacity);
       z-index: 1;
+      pointer-events: none;
     }
 
     footer {
-      background: var(--footer-blue);
-      color: #FFFFFF;
-      text-align: center;
-      padding: 28px 20px;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      letter-spacing: 1.1px;
+      position: relative;
       z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding: 1.1rem var(--pad-x) 1.3rem;
+      border-top: 1px solid var(--hairline);
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--ink-soft);
+      background: rgba(252, 253, 254, 0.9);
     }
 
-    footer a {
-      color: #FFFFFF;
-      text-decoration: none;
+    .footer-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem 0.9rem;
+    }
+
+    .footer-links span {
+      color: #A7B7C4;
     }
 
     footer a:hover {
-      color: #D8E1EA;
+      color: var(--ink);
     }
 
     .copyright {
-      margin-top: 16px;
-      font-size: 10.5px;
-      color: #D8E1EA;
+      color: #8195A7;
+      white-space: nowrap;
     }
 
     @media (max-width: 900px) {
       main {
-        padding-top: 12vh;
+        align-items: start;
+        padding-top: 6rem;
       }
 
       .content {
-        width: 62%;
-        min-width: 0;
+        max-width: 34ch;
       }
 
-      .mark {
-        right: -70px;
-        top: 36%;
-        width: 310px;
-        min-width: 0;
-        opacity: 0.14;
+      .world {
+        width: 38rem;
+        right: -12rem;
+        top: 58%;
+        opacity: 0.075;
       }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 640px) {
       header {
-        padding: 32px 28px 0;
+        padding: 2rem 1.65rem 0;
       }
 
       .brand {
-        font-size: 24px;
-        letter-spacing: 3.2px;
+        letter-spacing: 0.17em;
       }
 
       .subbrand {
-        margin-top: 7px;
-        font-size: 10.5px;
-        letter-spacing: 2.7px;
+        letter-spacing: 0.25em;
       }
 
       .icons {
-        gap: 13px;
-        font-size: 12px;
-        padding-top: 2px;
+        gap: 0.55rem;
+      }
+
+      .icons a {
+        width: 2.45rem;
+        height: 2.45rem;
       }
 
       main {
-        padding: 86px 28px 90px;
+        padding: 5.5rem 1.65rem 5rem;
       }
 
       .content {
-        width: 100%;
-        max-width: 520px;
+        max-width: 27ch;
       }
 
       h1 {
-        font-size: 16px;
-        line-height: 1.62;
-        letter-spacing: 0.95px;
+        line-height: 1.34;
       }
 
-      .accent {
-        width: 50px;
+      .world {
+        width: 31rem;
+        min-width: 0;
+        right: -14rem;
+        top: 60%;
+        opacity: 0.065;
       }
 
-      .mark {
-        right: -120px;
-        top: 46%;
-        width: 300px;
-        opacity: 0.12;
+      footer {
+        align-items: flex-start;
+        padding: 1rem 1.65rem 1.25rem;
+      }
+
+      .copyright {
+        width: 100%;
+        white-space: normal;
       }
     }
   </style>
@@ -244,96 +290,160 @@
 <body>
   <div class="page">
     <header>
-      <div class="brand-block">
+      <div class="brand-block" aria-label="Marbeau Advisory">
         <div class="brand">Marbeau</div>
         <div class="subbrand">Advisory</div>
       </div>
 
-      <div class="icons">
-        <a href="https://calendly.com/marbeau/intro-call" target="_blank" rel="noopener noreferrer" aria-label="Schedule intro call">☎</a>
-        <a href="mailto:info@marbeauadvisory.com" aria-label="Email">✉</a>
-        <a href="https://www.linkedin.com/in/kristaoldfield/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <span class="linkedin">in</span>
+      <nav class="icons" aria-label="Contact links">
+        <a
+          href="https://calendly.com/marbeau/intro-call"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Schedule an intro call"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.5 5.75c0-.97.78-1.75 1.75-1.75h2.05c.56 0 1.06.34 1.27.86l.74 1.84c.16.41.08.87-.22 1.19L8.78 9.2a13.75 13.75 0 0 0 6.02 6.02l1.31-1.31c.32-.3.78-.38 1.19-.22l1.84.74c.52.21.86.71.86 1.27v2.05c0 .97-.78 1.75-1.75 1.75h-.5C9.95 19.5 4.5 14.05 4.5 7.25v-1.5z" />
+          </svg>
         </a>
-      </div>
+
+        <a href="mailto:info@marbeauadvisory.com" aria-label="Email Marbeau Advisory">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3.75 6.75h16.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5a1.5 1.5 0 0 1 1.5-1.5z" />
+            <path d="M3 8l9 6 9-6" />
+          </svg>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/kristaoldfield/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit LinkedIn profile"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 9.5v7.5" />
+            <path d="M7 6.5h.01" />
+            <path d="M11.5 17V9.5" />
+            <path d="M11.5 12.75c0-1.8 1.17-3.25 3-3.25s3 1.45 3 3.25V17" />
+          </svg>
+        </a>
+      </nav>
     </header>
 
     <main>
       <section class="content">
         <h1>
-          Marbeau advises growth-oriented companies, funds, and mission-driven organizations on expanding their reach across existing and new geographies through aligned partnerships, capital, and strategic opportunities.
+          Marbeau advises growth-oriented companies, funds, and mission-driven organizations on expanding their reach across geographies through aligned partnerships, capital, and strategic opportunities.
         </h1>
 
-        <div class="accent"></div>
+        <div class="accent" aria-hidden="true"></div>
       </section>
 
-      <svg class="mark" viewBox="0 0 500 500" aria-hidden="true">
+      <svg
+        class="world"
+        viewBox="0 0 600 600"
+        preserveAspectRatio="xMidYMid meet"
+        aria-hidden="true"
+        focusable="false"
+      >
         <defs>
-          <clipPath id="globeClip">
-            <circle cx="250" cy="250" r="205" />
+          <clipPath id="worldMask">
+            <circle cx="300" cy="300" r="225" />
           </clipPath>
         </defs>
 
-        <circle cx="250" cy="250" r="205" fill="none" stroke="currentColor" stroke-width="1.4" />
+        <circle
+          cx="300"
+          cy="300"
+          r="225"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-opacity="0.7"
+        />
 
-        <g clip-path="url(#globeClip)" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M104 139
-                   C129 106, 181 87, 226 102
-                   C243 108, 253 119, 251 132
-                   C248 149, 225 151, 214 165
-                   C202 181, 214 194, 201 207
-                   C188 219, 166 211, 151 199
-                   C135 187, 119 186, 107 170
-                   C98 158, 96 149, 104 139Z" />
+        <g clip-path="url(#worldMask)" fill="currentColor" fill-opacity="0.56">
+          <!-- North America -->
+          <path d="M134 188
+                   C160 154, 211 136, 257 151
+                   C276 157, 288 169, 285 184
+                   C282 202, 258 205, 246 220
+                   C233 236, 246 250, 232 264
+                   C218 278, 195 270, 179 257
+                   C162 244, 146 243, 135 226
+                   C126 213, 126 199, 134 188Z" />
 
-          <path d="M185 213
-                   C205 213, 221 222, 234 235
-                   C219 240, 202 238, 185 230
-                   C176 226, 176 216, 185 213Z" />
+          <!-- Central America -->
+          <path d="M211 267
+                   C231 267, 247 275, 260 288
+                   C245 293, 228 291, 212 284
+                   C204 279, 203 270, 211 267Z" />
 
-          <path d="M233 242
-                   C258 259, 271 291, 259 327
-                   C251 351, 236 373, 242 405
-                   C219 391, 204 359, 204 328
-                   C204 302, 190 278, 205 258
-                   C213 249, 222 244, 233 242Z" />
+          <!-- South America -->
+          <path d="M257 296
+                   C282 314, 296 348, 283 384
+                   C274 410, 260 432, 266 462
+                   C240 447, 225 414, 226 383
+                   C227 356, 212 333, 228 312
+                   C237 302, 247 297, 257 296Z" />
 
-          <path d="M270 128
-                   C292 112, 327 114, 345 134
-                   C329 145, 311 150, 304 166
-                   C289 164, 273 156, 266 143
-                   C263 137, 264 132, 270 128Z" />
+          <!-- Europe -->
+          <path d="M295 175
+                   C319 160, 352 164, 371 184
+                   C354 194, 337 200, 329 215
+                   C314 214, 300 207, 292 194
+                   C288 187, 289 180, 295 175Z" />
 
-          <path d="M299 169
-                   C330 177, 350 209, 343 248
-                   C337 286, 312 333, 281 361
-                   C261 331, 253 294, 263 260
-                   C270 236, 261 216, 244 197
-                   C256 180, 276 164, 299 169Z" />
+          <!-- Africa -->
+          <path d="M323 219
+                   C357 226, 379 260, 371 302
+                   C364 342, 340 389, 307 417
+                   C287 385, 278 348, 289 313
+                   C297 288, 288 268, 270 249
+                   C283 231, 301 216, 323 219Z" />
 
-          <path d="M337 139
-                   C378 112, 436 123, 462 160
-                   C441 172, 418 185, 417 212
-                   C398 208, 374 207, 359 225
-                   C342 207, 334 175, 337 139Z" />
+          <!-- Asia -->
+          <path d="M362 188
+                   C406 160, 465 174, 491 210
+                   C469 223, 446 238, 445 266
+                   C426 261, 402 261, 386 280
+                   C368 260, 359 226, 362 188Z" />
 
-          <path d="M384 235
-                   C402 232, 422 239, 433 254
-                   C419 263, 397 262, 381 250
-                   C374 245, 376 238, 384 235Z" />
+          <!-- Southeast Asia -->
+          <path d="M410 289
+                   C429 285, 449 292, 461 306
+                   C447 318, 424 318, 407 304
+                   C400 299, 401 292, 410 289Z" />
 
-          <path d="M372 322
-                   C399 304, 439 313, 457 339
-                   C435 360, 393 365, 361 347
-                   C354 337, 360 329, 372 322Z" />
+          <!-- Australia -->
+          <path d="M396 380
+                   C425 360, 467 369, 486 396
+                   C462 418, 418 423, 386 405
+                   C379 393, 384 385, 396 380Z" />
         </g>
       </svg>
     </main>
 
     <footer>
-      <a href="mailto:info@marbeauadvisory.com">info@marbeauadvisory.com</a>
-      &nbsp; | &nbsp;
-      <a href="https://www.linkedin.com/in/kristaoldfield/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="footer-links">
+        <a href="mailto:info@marbeauadvisory.com">info@marbeauadvisory.com</a>
+        <span aria-hidden="true">•</span>
+        <a
+          href="https://calendly.com/marbeau/intro-call"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Schedule an intro call
+        </a>
+        <span aria-hidden="true">•</span>
+        <a
+          href="https://www.linkedin.com/in/kristaoldfield/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </div>
 
       <div class="copyright">
         © 2026 Marbeau Advisory. All rights reserved.
