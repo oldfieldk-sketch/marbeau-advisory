@@ -103,27 +103,19 @@
     }
 
     .hero {
-      max-width: 760px;
+      max-width: 740px;
       margin-top: 40px;
+      margin-left: 72px;
     }
 
     .description {
-      max-width: 720px;
-      font-size: clamp(24px, 3.2vw, 38px);
-      line-height: 1.25;
+      max-width: 700px;
+      font-size: clamp(21px, 2.6vw, 32px);
+      line-height: 1.32;
       font-weight: 400;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.015em;
       color: var(--text);
       margin: 0;
-    }
-
-    .subtle-note {
-      margin-top: 28px;
-      font-family: Arial, sans-serif;
-      font-size: 13px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent);
     }
 
     @media (max-width: 700px) {
@@ -160,10 +152,13 @@
 
       .hero {
         margin-top: 0;
+        margin-left: 0;
+        max-width: 100%;
       }
 
       .description {
-        font-size: 25px;
+        font-size: 23px;
+        line-height: 1.34;
       }
     }
   </style>
@@ -192,10 +187,6 @@
           process that aligns partnerships, capital, and market access for growth and
           sustained economic impact.
         </p>
-
-        <div class="subtle-note">
-          Partnerships · Capital · Market Access
-        </div>
       </section>
     </main>
   </div>
