@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: #FFFFFE;
+      background: #FFFFFF;
       color: #24557C;
     }
 
@@ -19,7 +19,7 @@
       flex-direction: column;
       position: relative;
       overflow: hidden;
-      background: #FFFFFE;
+      background: #FFFFFF;
     }
 
     header {
@@ -103,18 +103,18 @@
 
     .mark {
       position: absolute;
-      right: 8%;
-      top: 28%;
-      width: 360px;
-      height: 360px;
+      right: 7%;
+      top: 27%;
+      width: 390px;
+      height: 390px;
       color: #24557C;
-      opacity: 0.18;
+      opacity: 0.22;
       z-index: 1;
     }
 
     footer {
       background: #14385A;
-      color: #FFFFFE;
+      color: #FFFFFF;
       text-align: center;
       padding: 28px 20px;
       font-family: Arial, sans-serif;
@@ -124,7 +124,7 @@
     }
 
     footer a {
-      color: #FFFFFE;
+      color: #FFFFFF;
       text-decoration: none;
     }
 
@@ -165,11 +165,11 @@
       }
 
       .mark {
-        right: -105px;
+        right: -120px;
         top: 48%;
-        width: 280px;
-        height: 280px;
-        opacity: 0.15;
+        width: 300px;
+        height: 300px;
+        opacity: 0.18;
       }
     }
   </style>
@@ -181,9 +181,9 @@
       <div class="brand">Marbeau</div>
 
       <div class="icons">
-        <a href="tel:16462267600" aria-label="Phone">☎</a>
+        <a href="https://calendly.com/marbeau/intro-call" target="_blank" rel="noopener noreferrer" aria-label="Schedule intro call">☎</a>
         <a href="mailto:info@marbeauadvisory.com" aria-label="Email">✉</a>
-        <a href="https://www.linkedin.com/in/kristaoldfield/" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/kristaoldfield/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <span class="linkedin">in</span>
         </a>
       </div>
@@ -198,61 +198,73 @@
         <div class="accent"></div>
       </section>
 
-      <svg class="mark" viewBox="0 0 360 360" aria-hidden="true">
+      <svg class="mark" viewBox="0 0 500 500" aria-hidden="true">
         <defs>
           <clipPath id="globeClip">
-            <circle cx="180" cy="180" r="145" />
+            <circle cx="250" cy="250" r="205" />
           </clipPath>
         </defs>
 
-        <!-- outer globe -->
-        <circle cx="180" cy="180" r="145" fill="none" stroke="currentColor" stroke-width="1.4" />
+        <circle cx="250" cy="250" r="205" fill="none" stroke="currentColor" stroke-width="1.4" />
 
-        <!-- faint latitude / longitude lines -->
-        <ellipse cx="180" cy="180" rx="145" ry="52" fill="none" stroke="currentColor" stroke-width="0.7" />
-        <ellipse cx="180" cy="180" rx="145" ry="92" fill="none" stroke="currentColor" stroke-width="0.55" />
-        <ellipse cx="180" cy="180" rx="62" ry="145" fill="none" stroke="currentColor" stroke-width="0.55" />
-        <ellipse cx="180" cy="180" rx="105" ry="145" fill="none" stroke="currentColor" stroke-width="0.45" />
-
-        <!-- abstract geographic outlines -->
-        <g clip-path="url(#globeClip)" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <g clip-path="url(#globeClip)" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
           <!-- North America -->
-          <path d="M92 112
-                   C108 92, 138 82, 161 91
-                   C178 98, 180 116, 164 126
-                   C149 136, 143 151, 151 166
-                   C130 164, 111 154, 99 137
-                   C92 128, 87 120, 92 112Z" />
+          <path d="M104 139
+                   C129 106, 181 87, 226 102
+                   C243 108, 253 119, 251 132
+                   C248 149, 225 151, 214 165
+                   C202 181, 214 194, 201 207
+                   C188 219, 166 211, 151 199
+                   C135 187, 119 186, 107 170
+                   C98 158, 96 149, 104 139Z" />
+
+          <!-- Central America -->
+          <path d="M185 213
+                   C205 213, 221 222, 234 235
+                   C219 240, 202 238, 185 230
+                   C176 226, 176 216, 185 213Z" />
 
           <!-- South America -->
-          <path d="M155 176
-                   C174 189, 183 211, 176 233
-                   C171 251, 158 268, 164 289
-                   C145 275, 134 250, 138 226
-                   C141 207, 133 191, 155 176Z" />
+          <path d="M233 242
+                   C258 259, 271 291, 259 327
+                   C251 351, 236 373, 242 405
+                   C219 391, 204 359, 204 328
+                   C204 302, 190 278, 205 258
+                   C213 249, 222 244, 233 242Z" />
 
-          <!-- Europe / Africa -->
-          <path d="M194 122
-                   C211 113, 235 117, 244 132
-                   C230 139, 217 145, 213 160
-                   C229 170, 239 192, 233 218
-                   C228 242, 212 264, 194 279
-                   C182 256, 178 227, 187 203
-                   C194 184, 189 168, 176 156
-                   C179 143, 184 131, 194 122Z" />
+          <!-- Europe -->
+          <path d="M270 128
+                   C292 112, 327 114, 345 134
+                   C329 145, 311 150, 304 166
+                   C289 164, 273 156, 266 143
+                   C263 137, 264 132, 270 128Z" />
+
+          <!-- Africa -->
+          <path d="M299 169
+                   C330 177, 350 209, 343 248
+                   C337 286, 312 333, 281 361
+                   C261 331, 253 294, 263 260
+                   C270 236, 261 216, 244 197
+                   C256 180, 276 164, 299 169Z" />
 
           <!-- Asia -->
-          <path d="M239 118
-                   C272 106, 304 119, 315 143
-                   C300 151, 286 162, 287 180
-                   C270 174, 252 174, 239 188
-                   C229 169, 229 143, 239 118Z" />
+          <path d="M337 139
+                   C378 112, 436 123, 462 160
+                   C441 172, 418 185, 417 212
+                   C398 208, 374 207, 359 225
+                   C342 207, 334 175, 337 139Z" />
+
+          <!-- Southeast Asia / islands -->
+          <path d="M384 235
+                   C402 232, 422 239, 433 254
+                   C419 263, 397 262, 381 250
+                   C374 245, 376 238, 384 235Z" />
 
           <!-- Australia -->
-          <path d="M269 235
-                   C288 224, 310 231, 319 248
-                   C304 260, 279 263, 260 252
-                   C256 245, 260 239, 269 235Z" />
+          <path d="M372 322
+                   C399 304, 439 313, 457 339
+                   C435 360, 393 365, 361 347
+                   C354 337, 360 329, 372 322Z" />
         </g>
       </svg>
     </main>
@@ -260,7 +272,7 @@
     <footer>
       <a href="mailto:info@marbeauadvisory.com">info@marbeauadvisory.com</a>
       &nbsp; | &nbsp;
-      <a href="https://www.linkedin.com/in/kristaoldfield/" target="_blank">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/kristaoldfield/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
       <div class="copyright">
         © 2026 Marbeau Advisory. All rights reserved.
