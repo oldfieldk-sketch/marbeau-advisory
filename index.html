@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Marbeau</title>
+  <title>Marbeau Advisory</title>
+
   <style>
     body {
       margin: 0;
@@ -24,44 +25,47 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 38px 58px;
-      letter-spacing: 3px;
-      font-size: 28px;
+      padding: 42px 64px;
+      letter-spacing: 4px;
+      font-size: 32px;
       text-transform: uppercase;
+      z-index: 2;
     }
 
     .links {
       font-family: Arial, sans-serif;
-      font-size: 13px;
-      letter-spacing: 1px;
+      font-size: 12px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
     }
 
     .links a {
       color: #1f2630;
       text-decoration: none;
-      margin-left: 22px;
+      margin-left: 24px;
     }
 
     main {
       flex: 1;
       display: flex;
       align-items: center;
-      padding: 40px 58px 90px;
+      padding: 30px 64px 90px;
+      position: relative;
     }
 
     .content {
-      max-width: 520px;
+      max-width: 620px;
       z-index: 2;
     }
 
     h1 {
-      font-size: 21px;
-      line-height: 1.5;
+      font-size: 20px;
+      line-height: 1.55;
       font-weight: normal;
-      letter-spacing: 1.5px;
+      letter-spacing: 1.4px;
       text-transform: uppercase;
       margin: 0 0 24px;
+      max-width: 620px;
     }
 
     .accent {
@@ -73,32 +77,35 @@
 
     p {
       font-family: Arial, sans-serif;
-      font-size: 13px;
-      line-height: 1.65;
+      font-size: 12.5px;
+      line-height: 1.6;
       color: #3b414a;
       margin: 0 0 20px;
+      max-width: 560px;
     }
 
     .focus {
       font-family: Arial, sans-serif;
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 1.8px;
       text-transform: uppercase;
       color: #4c535c;
       margin-top: 30px;
+      max-width: 640px;
     }
 
     .orb {
       position: absolute;
-      right: 11%;
-      top: 25%;
-      width: 330px;
-      height: 330px;
+      right: 10%;
+      top: 24%;
+      width: 340px;
+      height: 340px;
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 30%, rgba(255,255,255,.95), rgba(210,216,222,.45) 45%, rgba(28,48,73,.16) 100%);
-      opacity: .55;
-      box-shadow: 0 30px 90px rgba(31,38,48,.12);
+      opacity: .45;
+      box-shadow: 0 30px 90px rgba(31,38,48,.10);
+      z-index: 1;
     }
 
     .orb::after {
@@ -117,6 +124,7 @@
       font-family: Arial, sans-serif;
       font-size: 12px;
       letter-spacing: 1px;
+      z-index: 2;
     }
 
     footer a {
@@ -132,8 +140,9 @@
 
     @media (max-width: 760px) {
       header {
-        padding: 28px 26px;
-        font-size: 18px;
+        padding: 30px 26px;
+        font-size: 24px;
+        letter-spacing: 3px;
         align-items: flex-start;
       }
 
@@ -149,7 +158,17 @@
       }
 
       h1 {
-        font-size: 23px;
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      p {
+        font-size: 12.5px;
+      }
+
+      .focus {
+        font-size: 10px;
+        line-height: 1.6;
       }
 
       .orb {
@@ -157,7 +176,7 @@
         height: 220px;
         right: -55px;
         top: 48%;
-        opacity: .35;
+        opacity: .28;
       }
     }
   </style>
@@ -167,6 +186,7 @@
   <div class="page">
     <header>
       <div>Marbeau</div>
+
       <div class="links">
         <a href="mailto:info@marbeauadvisory.com">Email</a>
         <a href="https://www.linkedin.com/in/kristaoldfield/" target="_blank">LinkedIn</a>
@@ -176,7 +196,7 @@
     <main>
       <section class="content">
         <h1>
-          Marbeau Advisory works with companies, funds, and investment platforms seeking access to global markets, capital relationships, and strategic visibility.
+          Global market access, capital relationships, and strategic visibility for companies, funds, and investment platforms.
         </h1>
 
         <div class="accent"></div>
