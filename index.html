@@ -9,8 +9,8 @@
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: #FAF6EE;
-      color: #071A33;
+      background: #FFFDF8;
+      color: #12365C;
     }
 
     .page {
@@ -34,7 +34,7 @@
       letter-spacing: 3.5px;
       text-transform: uppercase;
       font-weight: normal;
-      color: #071A33;
+      color: #12365C;
     }
 
     .icons {
@@ -46,28 +46,28 @@
     }
 
     .icons a {
-      color: #46304A;
+      color: #365A7C;
       text-decoration: none;
       line-height: 1;
     }
 
     .icons a:hover {
-      color: #071A33;
+      color: #12365C;
     }
 
     .linkedin {
       font-family: Arial, sans-serif;
       font-size: 10px;
       font-weight: bold;
-      border: 1px solid #46304A;
+      border: 1px solid #365A7C;
       padding: 1px 3px;
       line-height: 1;
-      color: #46304A;
+      color: #365A7C;
     }
 
     .icons a:hover .linkedin {
-      color: #071A33;
-      border-color: #071A33;
+      color: #12365C;
+      border-color: #12365C;
     }
 
     main {
@@ -84,19 +84,19 @@
     }
 
     h1 {
-      font-size: 20px;
-      line-height: 1.45;
+      font-size: 18px;
+      line-height: 1.5;
       font-weight: normal;
-      letter-spacing: 1.55px;
+      letter-spacing: 1.45px;
       text-transform: uppercase;
       margin: 0 0 28px;
-      color: #071A33;
+      color: #12365C;
     }
 
     .accent {
       width: 54px;
       height: 2px;
-      background: #46304A;
+      background: #6B7F96;
       margin: 0;
     }
 
@@ -107,30 +107,52 @@
       width: 310px;
       height: 310px;
       border-radius: 50%;
-      border: 1px solid rgba(7, 26, 51, 0.10);
-      opacity: 0.42;
+      border: 1px solid rgba(18, 54, 92, 0.10);
+      opacity: 0.28;
       z-index: 1;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent 49.5%,
+          rgba(18, 54, 92, 0.10) 50%,
+          transparent 50.5%
+        ),
+        linear-gradient(
+          0deg,
+          transparent 49.5%,
+          rgba(18, 54, 92, 0.07) 50%,
+          transparent 50.5%
+        );
     }
 
     .mark::before {
       content: "";
       position: absolute;
-      inset: 48px;
+      top: 10%;
+      bottom: 10%;
+      left: 25%;
+      right: 25%;
       border-radius: 50%;
-      border: 1px solid rgba(7, 26, 51, 0.08);
+      border-left: 1px solid rgba(18, 54, 92, 0.09);
+      border-right: 1px solid rgba(18, 54, 92, 0.09);
     }
 
     .mark::after {
       content: "";
       position: absolute;
-      inset: 96px;
+      left: 10%;
+      right: 10%;
+      top: 25%;
+      bottom: 25%;
       border-radius: 50%;
-      background: rgba(70, 48, 74, 0.08);
+      border-top: 1px solid rgba(18, 54, 92, 0.07);
+      border-bottom: 1px solid rgba(18, 54, 92, 0.07);
     }
 
     footer {
-      background: #020B1A;
-      color: #FAF6EE;
+      background: #031126;
+      color: #FFFDF8;
       text-align: center;
       padding: 28px 20px;
       font-family: Arial, sans-serif;
@@ -139,18 +161,18 @@
     }
 
     footer a {
-      color: #FAF6EE;
+      color: #FFFDF8;
       text-decoration: none;
     }
 
     footer a:hover {
-      color: #B9C1CC;
+      color: #C7D3DF;
     }
 
     .copyright {
       margin-top: 16px;
       font-size: 10.5px;
-      color: #B9C1CC;
+      color: #C7D3DF;
     }
 
     @media (max-width: 760px) {
@@ -175,8 +197,8 @@
       }
 
       h1 {
-        font-size: 18px;
-        line-height: 1.5;
+        font-size: 16.5px;
+        line-height: 1.55;
       }
 
       .mark {
@@ -184,7 +206,7 @@
         top: 50%;
         width: 240px;
         height: 240px;
-        opacity: 0.28;
+        opacity: 0.20;
       }
     }
   </style>
@@ -207,8 +229,7 @@
     <main>
       <section class="content">
         <h1>
-          
-          Marbeau advises growth-oriented companies, funds, and mission-driven organizations on expanding their reach across existing and new geographies through aligned partnerships, capital, and strategic opportunities. 
+          Marbeau advises growth-oriented companies, funds, and mission-driven organizations on expanding their reach across existing and new geographies through aligned partnerships, capital, and strategic opportunities.
         </h1>
 
         <div class="accent"></div>
