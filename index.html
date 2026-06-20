@@ -25,13 +25,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 42px 64px 20px;
-      z-index: 2;
+      padding: 34px 56px 10px;
+      z-index: 3;
     }
 
     .brand {
-      font-size: 34px;
-      letter-spacing: 4.5px;
+      font-size: 24px;
+      letter-spacing: 3px;
       text-transform: uppercase;
       font-weight: normal;
       color: #071E3D;
@@ -40,68 +40,64 @@
     .icons {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 15px;
       font-family: Arial, sans-serif;
       font-size: 13px;
     }
 
     .icons a {
-      color: #071E3D;
+      color: #6E2430;
       text-decoration: none;
       line-height: 1;
     }
 
-    .icons a:hover {
-      opacity: 0.65;
-    }
-
     .linkedin {
       font-family: Arial, sans-serif;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: bold;
-      border: 1px solid #071E3D;
+      border: 1px solid #6E2430;
       padding: 1px 3px;
       line-height: 1;
+      color: #6E2430;
     }
 
     main {
       flex: 1;
       display: flex;
       align-items: flex-start;
-      padding: 48px 64px 56px;
+      padding: 120px 56px 80px;
       position: relative;
     }
 
     .content {
-      max-width: 760px;
+      max-width: 560px;
       z-index: 2;
     }
 
     h1 {
       font-size: 19px;
-      line-height: 1.5;
+      line-height: 1.42;
       font-weight: normal;
-      letter-spacing: 1.35px;
+      letter-spacing: 1.6px;
       text-transform: uppercase;
-      margin: 0 0 24px;
-      max-width: 760px;
+      margin: 0 0 28px;
       color: #071E3D;
     }
 
     .accent {
       width: 54px;
       height: 2px;
-      background: #071E3D;
-      margin: 0 0 28px;
+      background: #6E2430;
+      margin: 0 0 34px;
     }
 
     p {
       font-family: Arial, sans-serif;
       font-size: 12px;
-      line-height: 1.6;
+      line-height: 1.65;
       color: #203A56;
       margin: 0 0 20px;
-      max-width: 680px;
+      max-width: 560px;
     }
 
     .focus {
@@ -113,33 +109,41 @@
       margin-top: 28px;
     }
 
-    .orb {
+    .tower {
       position: absolute;
-      right: 9%;
-      top: 38%;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,.85), rgba(170,190,210,.45) 45%, rgba(7,30,61,.18) 100%);
-      opacity: .42;
-      box-shadow: 0 30px 90px rgba(7,30,61,.10);
+      right: 25%;
+      top: 170px;
+      width: 170px;
+      height: 520px;
+      opacity: .18;
       z-index: 1;
+      background:
+        linear-gradient(to bottom, rgba(7,30,61,.75), rgba(7,30,61,.12), rgba(244,235,220,0)),
+        linear-gradient(90deg, transparent 0 8%, rgba(7,30,61,.22) 8% 11%, transparent 11% 20%, rgba(7,30,61,.18) 20% 23%, transparent 23% 34%, rgba(7,30,61,.22) 34% 37%, transparent 37% 49%, rgba(7,30,61,.20) 49% 52%, transparent 52% 64%, rgba(7,30,61,.18) 64% 67%, transparent 67% 78%, rgba(7,30,61,.22) 78% 81%, transparent 81%);
+      clip-path: polygon(48% 0, 55% 0, 55% 9%, 68% 18%, 74% 100%, 24% 100%, 30% 18%, 48% 9%);
     }
 
-    .orb::after {
+    .tower::after {
       content: "";
       position: absolute;
-      inset: 55px;
-      border-radius: 50%;
-      border: 1px solid rgba(7,30,61,.16);
+      left: 22%;
+      right: 22%;
+      top: 24%;
+      height: 68%;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          rgba(7,30,61,.22) 0 2px,
+          transparent 2px 18px
+        );
+      opacity: .55;
     }
 
     footer {
       background: #071E3D;
       color: #F4EBDC;
       text-align: center;
-      padding: 24px 20px;
+      padding: 26px 20px;
       font-family: Arial, sans-serif;
       font-size: 11px;
       letter-spacing: 1px;
@@ -163,7 +167,7 @@
       }
 
       .brand {
-        font-size: 24px;
+        font-size: 22px;
         letter-spacing: 3px;
       }
 
@@ -174,13 +178,12 @@
       }
 
       main {
-        padding: 56px 28px 80px;
-        align-items: flex-start;
+        padding: 70px 28px 80px;
       }
 
       h1 {
         font-size: 18px;
-        line-height: 1.55;
+        line-height: 1.5;
       }
 
       p {
@@ -192,12 +195,12 @@
         line-height: 1.7;
       }
 
-      .orb {
-        width: 220px;
-        height: 220px;
-        right: -55px;
-        top: 52%;
-        opacity: .30;
+      .tower {
+        right: -10px;
+        top: 280px;
+        width: 110px;
+        height: 340px;
+        opacity: .10;
       }
     }
   </style>
@@ -206,7 +209,7 @@
 <body>
   <div class="page">
     <header>
-      <div class="brand">Marbeau</div>
+      <div class="brand">Marbeau Advisory</div>
 
       <div class="icons">
         <a href="tel:16462267600" aria-label="Phone">☎</a>
@@ -220,7 +223,7 @@
     <main>
       <section class="content">
         <h1>
-          Global market access, capital strategy, and strategic visibility for companies, funds, and investment platforms.
+          Marbeau Advisory works with companies, funds, and investment platforms seeking access to global markets, capital strategy, and strategic visibility.
         </h1>
 
         <div class="accent"></div>
@@ -234,7 +237,7 @@
         </div>
       </section>
 
-      <div class="orb"></div>
+      <div class="tower"></div>
     </main>
 
     <footer>
