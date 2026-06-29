@@ -13,18 +13,17 @@
   <style>
     :root {
       --bg: #FCFDFE;
-      --ink: #1F4E79;
-      --ink-soft: #5E7387;
-      --line: #A8B8C7;
-      --hairline: #E3EAF0;
-      --globe-opacity: 0.10;
+      --ink: #2868A3;
+      --ink-soft: #8EABC8;
+      --line: #DDEBF6;
+      --map-opacity: 0.045;
 
-      --pad-x: clamp(1.5rem, 5vw, 4.75rem);
-      --pad-y: clamp(1.5rem, 3vw, 3rem);
+      --page-x: clamp(1.75rem, 4.8vw, 4.75rem);
+      --top-y: clamp(2rem, 3vw, 3rem);
 
-      --brand-size: clamp(1.65rem, 1.25rem + 1vw, 2.1rem);
-      --subbrand-size: clamp(0.82rem, 0.75rem + 0.2vw, 0.95rem);
-      --hero-size: clamp(1.15rem, 0.9rem + 0.9vw, 1.75rem);
+      --brand-size: clamp(1.8rem, 1.35rem + 0.9vw, 2.3rem);
+      --subbrand-size: clamp(0.78rem, 0.7rem + 0.18vw, 0.95rem);
+      --hero-size: clamp(1.18rem, 0.95rem + 0.8vw, 1.72rem);
     }
 
     * {
@@ -61,14 +60,25 @@
       isolation: isolate;
     }
 
+    .frame {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-left: var(--page-x);
+      padding-right: var(--page-x);
+    }
+
     header {
+      position: relative;
+      z-index: 3;
+      padding-top: var(--top-y);
+    }
+
+    .header-inner {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
-      padding: var(--pad-y) var(--pad-x) 0;
-      position: relative;
-      z-index: 3;
     }
 
     .brand-block {
@@ -80,18 +90,18 @@
     .brand {
       font-size: var(--brand-size);
       line-height: 1;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       font-weight: normal;
       color: var(--ink);
     }
 
     .subbrand {
-      margin-top: 0.5rem;
+      margin-top: 0.58rem;
       font-family: Arial, sans-serif;
       font-size: var(--subbrand-size);
-      line-height: 1.1;
-      letter-spacing: 0.3em;
+      line-height: 1;
+      letter-spacing: 0.34em;
       text-transform: uppercase;
       color: var(--ink-soft);
     }
@@ -99,32 +109,26 @@
     .icons {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 1.45rem;
+      padding-top: 0.8rem;
       font-family: Arial, sans-serif;
-      padding-top: 0.1rem;
     }
 
     .icons a {
-      width: 2.65rem;
-      height: 2.65rem;
-      border-radius: 999px;
-      border: 1px solid var(--hairline);
-      display: grid;
-      place-items: center;
       color: var(--ink-soft);
-      background: rgba(255, 255, 255, 0.72);
-      transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      display: inline-grid;
+      place-items: center;
+      transition: color 0.2s ease, transform 0.2s ease;
     }
 
     .icons a:hover {
       color: var(--ink);
-      border-color: #C7D4DF;
       transform: translateY(-1px);
     }
 
     .icons svg {
-      width: 1.05rem;
-      height: 1.05rem;
+      width: 0.95rem;
+      height: 0.95rem;
       stroke: currentColor;
       fill: none;
       stroke-width: 1.7;
@@ -134,14 +138,20 @@
 
     main {
       position: relative;
-      display: grid;
-      align-items: center;
-      padding: clamp(4rem, 10vh, 7rem) var(--pad-x) clamp(4rem, 10vh, 7rem);
       z-index: 2;
     }
 
+    .hero {
+      display: grid;
+      align-items: start;
+      min-height: 62vh;
+      padding-top: clamp(7rem, 17vh, 11rem);
+      padding-bottom: clamp(4rem, 8vh, 6rem);
+    }
+
     .content {
-      max-width: 44ch;
+      max-width: 35rem;
+      margin-left: clamp(1.25rem, 4vw, 4.25rem);
       position: relative;
       z-index: 2;
     }
@@ -149,30 +159,29 @@
     h1 {
       margin: 0;
       font-size: var(--hero-size);
-      line-height: 1.38;
-      letter-spacing: -0.01em;
+      line-height: 1.4;
+      letter-spacing: -0.012em;
       font-weight: normal;
       color: var(--ink);
     }
 
     .accent {
-      width: 4.25rem;
+      width: 5.2rem;
       height: 2px;
       background: var(--line);
-      margin-top: 1.6rem;
+      margin-top: 1.9rem;
       border-radius: 999px;
     }
 
-    .world {
+    .background-map {
       position: absolute;
-      right: -5vw;
-      top: 49%;
-      transform: translateY(-50%);
-      width: min(50vw, 42rem);
-      min-width: 28rem;
-      height: auto;
+      left: 0;
+      right: 0;
+      top: 13%;
+      width: 100%;
+      height: 72%;
       color: var(--ink);
-      opacity: var(--globe-opacity);
+      opacity: var(--map-opacity);
       z-index: 1;
       pointer-events: none;
     }
@@ -180,18 +189,19 @@
     footer {
       position: relative;
       z-index: 3;
+      padding-bottom: 1.4rem;
+      font-family: Arial, sans-serif;
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: var(--ink-soft);
+    }
+
+    .footer-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
-      padding: 1.1rem var(--pad-x) 1.3rem;
-      border-top: 1px solid var(--hairline);
-      font-family: Arial, sans-serif;
-      font-size: 0.82rem;
-      line-height: 1.45;
-      color: var(--ink-soft);
-      background: rgba(252, 253, 254, 0.9);
     }
 
     .footer-links {
@@ -202,7 +212,7 @@
     }
 
     .footer-links span {
-      color: #A7B7C4;
+      color: #C8D7E6;
     }
 
     footer a:hover {
@@ -210,31 +220,37 @@
     }
 
     .copyright {
-      color: #8195A7;
+      color: #B4C9DD;
       white-space: nowrap;
     }
 
     @media (max-width: 900px) {
-      main {
-        align-items: start;
-        padding-top: 6rem;
+      .hero {
+        min-height: 64vh;
+        padding-top: 6.5rem;
       }
 
       .content {
-        max-width: 40ch;
+        margin-left: clamp(0.75rem, 2vw, 1.5rem);
+        max-width: 32rem;
       }
 
-      .world {
-        width: 38rem;
-        right: -12rem;
-        top: 58%;
-        opacity: 0.075;
+      .background-map {
+        left: -18%;
+        width: 136%;
+        top: 18%;
+        height: 64%;
+        opacity: 0.035;
       }
     }
 
     @media (max-width: 640px) {
-      header {
-        padding: 2rem 1.65rem 0;
+      :root {
+        --page-x: 1.65rem;
+      }
+
+      .header-inner {
+        gap: 1.25rem;
       }
 
       .brand {
@@ -242,41 +258,50 @@
       }
 
       .subbrand {
+        margin-top: 0.5rem;
         letter-spacing: 0.25em;
       }
 
       .icons {
-        gap: 0.55rem;
+        gap: 0.85rem;
+        padding-top: 0.55rem;
       }
 
-      .icons a {
-        width: 2.45rem;
-        height: 2.45rem;
+      .icons svg {
+        width: 0.9rem;
+        height: 0.9rem;
       }
 
-      main {
-        padding: 5.5rem 1.65rem 5rem;
+      .hero {
+        min-height: 63vh;
+        padding-top: 5.5rem;
+        padding-bottom: 4rem;
       }
 
       .content {
-        max-width: 30ch;
+        margin-left: 0;
+        max-width: 30rem;
       }
 
       h1 {
-        line-height: 1.42;
+        line-height: 1.43;
       }
 
-      .world {
-        width: 31rem;
-        min-width: 0;
-        right: -14rem;
-        top: 60%;
-        opacity: 0.065;
+      .accent {
+        width: 4.5rem;
+        margin-top: 1.6rem;
       }
 
-      footer {
+      .background-map {
+        left: -52%;
+        width: 205%;
+        top: 24%;
+        height: 56%;
+        opacity: 0.032;
+      }
+
+      .footer-inner {
         align-items: flex-start;
-        padding: 1rem 1.65rem 1.25rem;
       }
 
       .copyright {
@@ -289,137 +314,134 @@
 
 <body>
   <div class="page">
+    <svg
+      class="background-map"
+      viewBox="0 0 1600 900"
+      preserveAspectRatio="xMidYMid meet"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <g fill="currentColor">
+        <path d="M120 265
+                 C165 215, 255 185, 335 200
+                 C395 210, 440 240, 452 287
+                 C460 320, 435 350, 398 368
+                 C360 386, 332 418, 326 458
+                 C286 468, 235 446, 198 415
+                 C162 385, 124 376, 105 336
+                 C95 314, 96 285, 120 265Z" />
+
+        <path d="M338 468
+                 C374 468, 416 484, 448 512
+                 C417 519, 390 517, 360 507
+                 C335 498, 319 482, 338 468Z" />
+
+        <path d="M432 530
+                 C486 562, 514 631, 495 701
+                 C480 755, 455 801, 465 854
+                 C420 835, 390 789, 388 727
+                 C386 673, 360 619, 392 572
+                 C404 553, 417 540, 432 530Z" />
+
+        <path d="M706 248
+                 C746 224, 804 232, 836 266
+                 C808 286, 772 294, 754 320
+                 C722 320, 692 306, 678 280
+                 C672 266, 685 255, 706 248Z" />
+
+        <path d="M744 332
+                 C804 346, 844 410, 833 486
+                 C820 565, 777 646, 718 704
+                 C676 645, 658 575, 673 507
+                 C684 453, 661 409, 629 372
+                 C656 348, 696 328, 744 332Z" />
+
+        <path d="M825 264
+                 C905 220, 1032 228, 1124 268
+                 C1176 291, 1235 338, 1246 390
+                 C1188 414, 1138 440, 1122 487
+                 C1076 476, 1007 477, 955 518
+                 C900 495, 860 444, 839 393
+                 C819 348, 801 289, 825 264Z" />
+
+        <path d="M1028 520
+                 C1078 513, 1126 530, 1154 564
+                 C1120 591, 1068 594, 1027 571
+                 C1005 558, 1006 529, 1028 520Z" />
+
+        <path d="M1052 658
+                 C1126 621, 1220 633, 1268 696
+                 C1218 743, 1124 755, 1054 720
+                 C1030 699, 1027 674, 1052 658Z" />
+
+        <path d="M420 118
+                 C462 87, 533 93, 564 140
+                 C548 171, 506 181, 470 174
+                 C435 168, 404 146, 420 118Z" />
+      </g>
+    </svg>
+
     <header>
-      <div class="brand-block" aria-label="Marbeau Advisory">
-        <div class="brand">Marbeau</div>
-        <div class="subbrand">Advisory</div>
+      <div class="frame header-inner">
+        <div class="brand-block" aria-label="Marbeau Advisory">
+          <div class="brand">Marbeau</div>
+          <div class="subbrand">Advisory</div>
+        </div>
+
+        <nav class="icons" aria-label="Contact links">
+          <a href="mailto:info@marbeauadvisory.com" aria-label="Email Marbeau Advisory">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3.75 6.75h16.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5a1.5 1.5 0 0 1 1.5-1.5z" />
+              <path d="M3 8l9 6 9-6" />
+            </svg>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/kristaoldfield/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit LinkedIn profile"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 9.5v7.5" />
+              <path d="M7 6.5h.01" />
+              <path d="M11.5 17V9.5" />
+              <path d="M11.5 12.75c0-1.8 1.17-3.25 3-3.25s3 1.45 3 3.25V17" />
+            </svg>
+          </a>
+        </nav>
       </div>
-
-      <nav class="icons" aria-label="Contact links">
-        <a href="mailto:info@marbeauadvisory.com" aria-label="Email Marbeau Advisory">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M3.75 6.75h16.5a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H3.75a1.5 1.5 0 0 1-1.5-1.5v-7.5a1.5 1.5 0 0 1 1.5-1.5z" />
-            <path d="M3 8l9 6 9-6" />
-          </svg>
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/kristaoldfield/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Visit LinkedIn profile"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 9.5v7.5" />
-            <path d="M7 6.5h.01" />
-            <path d="M11.5 17V9.5" />
-            <path d="M11.5 12.75c0-1.8 1.17-3.25 3-3.25s3 1.45 3 3.25V17" />
-          </svg>
-        </a>
-      </nav>
     </header>
 
     <main>
-      <section class="content">
-        <h1>
-          Marbeau advises companies, funds, and mission-driven organizations on how to expand across markets, strengthen positioning, and build the ecosystem needed to access aligned capital.
-        </h1>
+      <section class="frame hero">
+        <div class="content">
+          <h1>
+            Marbeau advises companies, funds, and mission-driven organizations on how to expand across markets, strengthen positioning, and build the ecosystem needed to access aligned capital.
+          </h1>
 
-        <div class="accent" aria-hidden="true"></div>
+          <div class="accent" aria-hidden="true"></div>
+        </div>
       </section>
-
-      <svg
-        class="world"
-        viewBox="0 0 600 600"
-        preserveAspectRatio="xMidYMid meet"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <defs>
-          <clipPath id="worldMask">
-            <circle cx="300" cy="300" r="225" />
-          </clipPath>
-        </defs>
-
-        <circle
-          cx="300"
-          cy="300"
-          r="225"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.5"
-          stroke-opacity="0.7"
-        />
-
-        <g clip-path="url(#worldMask)" fill="currentColor" fill-opacity="0.56">
-          <path d="M134 188
-                   C160 154, 211 136, 257 151
-                   C276 157, 288 169, 285 184
-                   C282 202, 258 205, 246 220
-                   C233 236, 246 250, 232 264
-                   C218 278, 195 270, 179 257
-                   C162 244, 146 243, 135 226
-                   C126 213, 126 199, 134 188Z" />
-
-          <path d="M211 267
-                   C231 267, 247 275, 260 288
-                   C245 293, 228 291, 212 284
-                   C204 279, 203 270, 211 267Z" />
-
-          <path d="M257 296
-                   C282 314, 296 348, 283 384
-                   C274 410, 260 432, 266 462
-                   C240 447, 225 414, 226 383
-                   C227 356, 212 333, 228 312
-                   C237 302, 247 297, 257 296Z" />
-
-          <path d="M295 175
-                   C319 160, 352 164, 371 184
-                   C354 194, 337 200, 329 215
-                   C314 214, 300 207, 292 194
-                   C288 187, 289 180, 295 175Z" />
-
-          <path d="M323 219
-                   C357 226, 379 260, 371 302
-                   C364 342, 340 389, 307 417
-                   C287 385, 278 348, 289 313
-                   C297 288, 288 268, 270 249
-                   C283 231, 301 216, 323 219Z" />
-
-          <path d="M362 188
-                   C406 160, 465 174, 491 210
-                   C469 223, 446 238, 445 266
-                   C426 261, 402 261, 386 280
-                   C368 260, 359 226, 362 188Z" />
-
-          <path d="M410 289
-                   C429 285, 449 292, 461 306
-                   C447 318, 424 318, 407 304
-                   C400 299, 401 292, 410 289Z" />
-
-          <path d="M396 380
-                   C425 360, 467 369, 486 396
-                   C462 418, 418 423, 386 405
-                   C379 393, 384 385, 396 380Z" />
-        </g>
-      </svg>
     </main>
 
     <footer>
-      <div class="footer-links">
-        <a href="mailto:info@marbeauadvisory.com">info@marbeauadvisory.com</a>
-        <span aria-hidden="true">•</span>
-        <a
-          href="https://www.linkedin.com/in/kristaoldfield/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-      </div>
+      <div class="frame footer-inner">
+        <div class="footer-links">
+          <a href="mailto:info@marbeauadvisory.com">info@marbeauadvisory.com</a>
+          <span aria-hidden="true">•</span>
+          <a
+            href="https://www.linkedin.com/in/kristaoldfield/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
 
-      <div class="copyright">
-        © 2026 Marbeau Advisory. All rights reserved.
+        <div class="copyright">
+          © 2026 Marbeau Advisory. All rights reserved.
+        </div>
       </div>
     </footer>
   </div>
