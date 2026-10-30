@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Business inquiries for Marbeau Group, an independent strategic advisory firm.">
+  <title>Business Inquiry | Marbeau Group</title>
+  <style>
+    :root { --bg:#FCFDFE; --ink:#174A73; --soft:#6689A8; --line:#BCD1E2; --brand:#0F222C; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:Georgia,"Times New Roman",serif; -webkit-font-smoothing:antialiased; }
+    a { color:inherit; }
+    .wrap { width:min(100% - 3rem, 920px); margin:0 auto; }
+    header { padding:2.5rem 0 1rem; }
+    .brand { display:inline-block; width:min(100%, 340px); }
+    .brand img { display:block; width:100%; height:auto; }
+    main { padding:3.3rem 0 5rem; }
+    .eyebrow { margin:0 0 .8rem; color:var(--soft); font:600 .72rem/1.5 Arial,sans-serif; letter-spacing:.19em; text-transform:uppercase; }
+    h1 { font-size:clamp(2rem,4.8vw,3.3rem); line-height:1.13; font-weight:normal; letter-spacing:-.025em; margin:0 0 1rem; color:var(--brand); }
+    .intro { max-width:660px; margin:0 0 2rem; font-size:1.12rem; line-height:1.65; }
+    .accent { width:82px; height:2px; background:var(--line); margin:1.6rem 0 2.3rem; }
+    form { padding:2rem; background:#fff; border:1px solid #D5E1EA; box-shadow:0 16px 50px rgba(15,34,44,.035); }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.35rem 1.5rem; }
+    .field { display:flex; flex-direction:column; gap:.5rem; }
+    .full { grid-column:1/-1; }
+    label { color:var(--brand); font:600 .82rem/1.4 Arial,sans-serif; }
+    .optional { color:var(--soft); font-weight:normal; }
+    input, select, textarea { width:100%; border:1px solid #B5C8D7; border-radius:2px; background:#fff; color:var(--brand); padding:.88rem .9rem; font:400 .96rem/1.4 Arial,sans-serif; }
+    input:focus, select:focus, textarea:focus { outline:2px solid #6689A8; outline-offset:2px; }
+    textarea { min-height:155px; resize:vertical; }
+    .consent { display:flex; align-items:flex-start; gap:.75rem; margin:1.8rem 0 1.2rem; font:400 .85rem/1.6 Arial,sans-serif; color:#405F73; }
+    .consent input { width:1rem; height:1rem; flex:none; margin:.17rem 0 0; }
+    .note { margin:0 0 1.6rem; font:400 .78rem/1.6 Arial,sans-serif; color:#557487; }
+    button { border:1px solid var(--brand); background:var(--brand); color:#F7F4EF; font:600 .85rem/1.2 Arial,sans-serif; letter-spacing:.08em; padding:1rem 1.8rem; cursor:pointer; }
+    button:hover { background:#1D4658; }
+    .back { display:inline-block; margin-top:1.8rem; font:400 .85rem/1.4 Arial,sans-serif; color:var(--soft); text-decoration:none; }
+    .back:hover { text-decoration:underline; }
+    footer { border-top:1px solid #E3EAF0; padding:1.4rem 0 2rem; color:var(--soft); font:400 .78rem/1.5 Arial,sans-serif; }
+    .honeypot { position:absolute; left:-9999px; opacity:0; }
+    @media(max-width:640px) { .wrap{width:min(100% - 2rem,920px)} header{padding:1.6rem 0 0} main{padding:2.5rem 0 3rem} form{padding:1.3rem} .grid{grid-template-columns:1fr} .full{grid-column:auto} button{width:100%} }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="/" aria-label="Marbeau Group home"><img src="/Marbeau_Group_Website_Transparent.svg" alt="Marbeau Group"></a>
+  </header>
+  <main class="wrap">
+    <p class="eyebrow">Marbeau Group · Strategic Advisory</p>
+    <h1>Business Inquiry</h1>
+    <p class="intro">Tell us about your organization and the opportunity you would like to explore. We welcome inquiries related to institutional capital, infrastructure, international markets, and strategic partnerships.</p>
+    <div class="accent" aria-hidden="true"></div>
+    <form action="https://formsubmit.co/inquiry@marbeaugroup.com" method="POST">
+      <input type="hidden" name="_subject" value="Marbeau Group | New Business Inquiry">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="https://www.marbeaugroup.com/inquiry-received.html">
+      <input type="hidden" name="_url" value="https://www.marbeaugroup.com/business-inquiry.html">
+      <div class="honeypot" aria-hidden="true"><label for="company-fax">Leave this field blank</label><input id="company-fax" type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <div class="grid">
+        <div class="field"><label for="full-name">Full name *</label><input id="full-name" name="name" type="text" autocomplete="name" maxlength="120" required></div>
+        <div class="field"><label for="work-email">Business email *</label><input id="work-email" name="email" type="email" autocomplete="email" maxlength="180" required></div>
+        <div class="field"><label for="organization">Organization *</label><input id="organization" name="organization" type="text" autocomplete="organization" maxlength="160" required></div>
+        <div class="field"><label for="website">Organization website <span class="optional">(optional)</span></label><input id="website" name="organization_website" type="url" placeholder="https://" maxlength="250"></div>
+        <div class="field"><label for="region">Country or region <span class="optional">(optional)</span></label><input id="region" name="country_or_region" type="text" maxlength="120"></div>
+        <div class="field"><label for="inquiry-type">Area of interest *</label>
+          <select id="inquiry-type" name="area_of_interest" required>
+            <option value="" disabled selected>Select an area</option>
+            <option>International market entry</option>
+            <option>Infrastructure and project strategy</option>
+            <option>Capital strategy and readiness</option>
+            <option>Strategic partnerships</option>
+            <option>Institutional positioning</option>
+            <option>Other advisory inquiry</option>
+          </select>
+        </div>
+        <div class="field full"><label for="message">Tell us about your inquiry *</label><textarea id="message" name="message" minlength="20" maxlength="3000" placeholder="A brief description of your objectives, geography, and timeline is helpful." required></textarea></div>
+      </div>
+      <label class="consent"><input type="checkbox" name="contact_permission" value="Yes" required><span>I agree to be contacted by Marbeau Group regarding this inquiry.</span></label>
+      <p class="note">Please do not submit confidential, proprietary, or sensitive personal information. Form submissions are processed by a third-party form delivery provider and emailed to Marbeau Group. This form is for business inquiries, not investment solicitations.</p>
+      <button type="submit">Submit Inquiry</button>
+    </form>
+    <a class="back" href="/">← Return to Marbeau Group</a>
+  </main>
+  <footer><div class="wrap">© 2026 Marbeau Group LLC. All rights reserved.</div></footer>
+</body>
+</html>
